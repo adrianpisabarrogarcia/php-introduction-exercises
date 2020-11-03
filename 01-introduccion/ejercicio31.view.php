@@ -8,16 +8,13 @@
 <ul>
         <?php
             echo "<li>El array generado es: ";
-            numerosAleatorios($array);
-            echo "</li>";
-            echo "<li>Zerrenda: ";
-            numeros($array);
+            $array2 = numerosAleatorios($array);
             echo "</li>";
             echo "<li>El valor más alto es: ";
-            valorAlto($array);
+            echo valorAlto($array2);
             echo "</li>";
             echo "<li>El valor más bajo es: ";
-            valorBajo($array);
+            echo valorBajo($array2);
             echo "</li>";
         ?>
 </ul>

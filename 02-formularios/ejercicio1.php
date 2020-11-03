@@ -6,14 +6,14 @@ if(isset($_GET["unidad"]) && isset($_GET["temperatura"])){
 
     if ($unidad == "celsius"){
         $resultado = $temperatura + 32;
-        echo "Resultado de la conversión ". $temperatura ." celsius: ". $resultado . " farenheit";
+        require "ejercicio1.view.php";
     }else{
         $resultado = $temperatura - 32;
-        echo "Resultado de la conversión ". $temperatura ." farenheit: ". $resultado . " celsius";
+        require "ejercicio1.view.php";
     }
 
 }else{
-    echo "Inserta todos los datos del formulario correctamente.";
+    require "ejercicio1.view.php";
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-$array = [2];
+$array = [];
 
 function numerosAleatorios($array){
     for ($i = 0; $i < 20; $i++){
@@ -7,6 +7,7 @@ function numerosAleatorios($array){
         array_push($array, $numero);
         echo $array[$i].", ";
     }
+    return $array;
 }
 
 function numeros($array){
@@ -20,8 +21,8 @@ function numeros($array){
 function valorAlto($array){
     $valorMas = 0;
     foreach ($array as $value){
-        if($array[$value] > $valorMas){
-            $valorMas = $array[$value];
+        if($value > $valorMas){
+            $valorMas = $value;
         }
     }
     return $valorMas;
