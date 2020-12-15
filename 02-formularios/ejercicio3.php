@@ -3,17 +3,19 @@
 $arrayNumeros = [];
 
 
-function crearArray($arrayNumeros)
+function crearArray()
 {
-
-    for ($i = 0; $i < 21; $i++) {
+    $arrayNumeros2 = [];
+    for ($i = 0; $i < 20; $i++) {
         $numero = random_int(1, 10);
-        array_push($arrayNumeros, $numero);
+        array_push($arrayNumeros2, $numero);
     }
+
+    return $arrayNumeros2;
 }
 
 
-if (isset($_GET["numeros"])){
+if (isset($_GET["numeros"])) {
     $arrayNumeros = explode(",", $_GET["numeros"]);
     $contador = 0;
     $num = $_GET["num"];
@@ -23,9 +25,8 @@ if (isset($_GET["numeros"])){
         }
     }
     echo var_dump($arrayNumeros);
-}else{
-    crearArray($arrayNumeros);
-    var_dump($arrayNumeros);
+} else {
+    $arrayNumeros = crearArray();
 }
 
 require "ejercicio3.view.php";

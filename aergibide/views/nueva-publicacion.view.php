@@ -1,4 +1,14 @@
-<?php require "../vistasfijas/head.php"?>
+<?php
+/*En caso de que no exista la categoria*/
+if (empty($categorias))
+{
+    header("Location: ../model/login.php");
+}
+else
+{
+    /*En caso de que exista la categoria realizaremos el htlml de la nueva publicacion*/
+    require "../vistasfijas/head.php"?>
+
 
 <link type="text/css" rel="stylesheet" href="../css/principal.css">
 <link type="text/css" rel="stylesheet" href="../css/mis-publicaciones.css">
@@ -19,8 +29,8 @@
 
     <div id="menu_usuario">
         <ul>
-            <li><a>Perfil</a></li>
-            <li><a>Cerrar sesión</a></li>
+            <li><a href="../model/perfil.php">Perfil</a></li>
+            <li><a onClick="cerrarsesion()">Cerrar sesión</a></li>
         </ul>
     </div>
 </article>
@@ -93,5 +103,9 @@
 <script src="https://cdn.tiny.cloud/1/u3odj6obwmpr4y5vzm7zy8bk6ef0bfe8cv4yta79dv9ksh9k/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>tinymce.init({selector:'textarea'});</script>
 <script src="../js/validacionPregunta.js"> </script>
+<script src="../js/perfil.js"></script>
+<script src="../js/modificarcss.js"></script>
+
 </body>
 </html>
+<?php } ?>

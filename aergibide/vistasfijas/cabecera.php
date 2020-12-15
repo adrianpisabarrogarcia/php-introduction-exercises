@@ -1,3 +1,11 @@
+<?php
+/*En caso de que no hayan datos en la pagina rediccionaremos a la pagina de login.php*/
+if (empty($datos))
+header("Location: ../model/login.php");
+else
+{
+    /*En caso de que existan los datos generaremos la cabecera de las paginas*/
+?>
 <body>
     <header>
         <div id="logotipo">
@@ -47,3 +55,6 @@
             <button id="perfil"><img src="<?=$datos->Imagen?>"></button>
         </div>
     </header>
+    <?php
+}
+?>

@@ -1,4 +1,10 @@
 <?php
+/*En caso de que no existan los datos*/
+if (empty($datos))
+header('Location: ../model/login.php');
+else
+{
+    /*En caso de que exista generaremos la pagina del perfil*/
 require "../vistasfijas/head.php";
 ?>
 <link rel="stylesheet" href="../css/estiloperfil.css">
@@ -27,8 +33,8 @@ require "../vistasfijas/cabecera.php";
             <div id="datusu">
                 <div id="datos">
                     <p><b>Usuario: </b><?= $datos->Usuario; ?></p>
-                    <p><b>Nombre: </b><?= $datos->Nombre; ?></p>
-                    <p><b>Apellido: </b><?= $datos->Apellido; ?></p>
+                    <p><b>Nombre: </b><?= utf8_encode($datos->Nombre); ?></p>
+                    <p><b>Apellido: </b><?= utf8_encode($datos->Apellido); ?></p>
                     <p><b>Correo: </b><?= $datos->Correo; ?></p>
                 </div>
                 <div id="imag">
@@ -135,5 +141,7 @@ require "../vistasfijas/cabecera.php";
 </script>
 <script src="../js/perfil.js"></script>
 <script src="../js/validaciondatos.js"></script>
+
 </body>
 </html>
+<?php } ?>
